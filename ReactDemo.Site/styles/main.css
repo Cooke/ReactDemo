@@ -1,0 +1,95 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #eee;
+    font-family: sans-serif;
+    color: #676767;
+}
+
+header {
+    height: 5rem;
+    background-color: #36424a;
+    color: white;
+    font-family: sans-serif;
+}
+
+header h1 {
+    width: 1024px;
+    margin: 0 auto;
+    font-weight: normal;
+    padding-top: 1.2rem;
+    font-size: 2.5rem;
+}
+
+main {
+    width: 1024px;
+    margin: 2rem auto;
+}
+
+.search-form {
+  margin-top: 2rem;
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+.search-box {
+    width: calc(100% - 122px);
+    height: 3rem;
+    margin-right: 10px;
+    border: 1px solid lightgray;
+    font-size: 1.5rem;
+    padding-left: 1rem;
+    border-radius: 2px;
+}
+
+.search-button {
+    height: 3rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+    font-size: 1.5rem;
+    padding: 0 1rem;
+    background-color: #93d0ea;
+    color: white;
+    border-radius: 3px;
+}
+
+.search-button:disabled {
+    background-color: #cbd3d7;
+}
+
+section.search-result {
+  margin-top: 1rem;
+  background-color: white;
+  padding: 1rem;
+  border: 1px solid lightgray;
+  border-radius: 3px;
+}
+
+progress {
+    width: 100%;
+}
+
+table {
+    width: 100%;
+}
+
+table tr:first-child th:first-child {
+    width: 250px;
+}
+
+th, td {
+    text-align: left;
+    border-bottom: solid 1px rgb(218, 218, 218);
+    padding: 4px 0;
+}
+
+small {
+    font-size: 60%;
+    color: #b0b0b0;
+}
