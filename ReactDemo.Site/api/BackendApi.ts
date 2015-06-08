@@ -4,14 +4,13 @@
 
         public search(query: string) {
             setTimeout(() => {
-
                 $.ajax({
                     url: this.baseUrl + 'api/consultants',
                     data: { query: query },
                     success: (result: IConsultant[]) => Actions.SearchActions.searchSuccess(result),
                     error: () => Actions.SearchActions.searchError()
                 });
-            }, 100);
+            }, 1500);
         }
     }
 }

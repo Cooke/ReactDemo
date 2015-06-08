@@ -26,6 +26,8 @@ namespace ReactDemo.DocumentScanner
                 stringBuilder.AppendLine(docs.Paragraphs[i + 1].Range.Text);
             }
 
+            docs.Close();
+
             return stringBuilder.ToString();
         }
     }

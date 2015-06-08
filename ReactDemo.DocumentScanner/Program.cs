@@ -11,7 +11,7 @@ namespace ReactDemo.DocumentScanner
 {
     class Program
     {
-        private const string CvDocumentsRootPath = @"c:\temp\docs\";
+        private const string CvDocumentsRootPath = @"c:\temp\";
 
         private static readonly string[] KnownSkills = {
             "C#", "C", "C++", ".NET", "VB", "VB.NET", "ASP", "ASP.NET", "HTML", "CSS", "JavaScript", "VHDL", "HTML5",
@@ -67,33 +67,6 @@ namespace ReactDemo.DocumentScanner
             var skillPairs = foundSkills.Select(x => new KeyValuePair<string, string>("Skills", x));
             httpClient.PostAsync("http://localhost:61952/api/consultants",
                 new FormUrlEncodedContent(new[] {namePair}.Concat(skillPairs))).Wait();
-        }
-    }
-
-    public class WordDocumentReader : IDisposable
-    {
-        private Microsoft.Office.Interop.Word.Application word = new Microsoft.Office.Interop.Word.Application();
-
-        public void Dispose()
-        {
-            word.Quit();
-        }
-
-        public string ReadFile(string filePath)
-        {
-            object miss = System.Reflection.Missing.Value;
-            object path = filePath;
-            object readOnly = true;
-
-            Microsoft.Office.Interop.Word.Document docs = word.Documents.Open(ref path, ref miss, ref readOnly, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss, ref miss);
-
-            var stringBuilder = new StringBuilder();
-            for (int i = 0; i < docs.Paragraphs.Count; i++)
-            {
-                stringBuilder.AppendLine(docs.Paragraphs[i + 1].Range.Text);
-            }
-
-            return stringBuilder.ToString();
         }
     }
 }

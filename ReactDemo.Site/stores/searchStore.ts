@@ -20,7 +20,7 @@ module Stores {
 
         protected handleAction(payload: Actions.IActionPayload): void {
             switch (payload.actionType) {
-                case Actions.Types.Search:
+                case Actions.ActionType.Search:
                     var searchPayload = <Actions.ISearchActionPayload>payload;
                     this.isCurrentlySearching = true;
                     this.searchResult = null;
@@ -28,13 +28,13 @@ module Stores {
                     this.notifyChange();
                     break;
 
-                case Actions.Types.SearchError:
+                case Actions.ActionType.SearchError:
                     this.isCurrentlySearching = false;
                     this.notifyChange();
                     break;
 
-                case Actions.Types.SearchSuccess:
-                    var successPayload = <Actions.ISearchSuccssesfulPayload>payload;
+                case Actions.ActionType.SearchSuccess:
+                    var successPayload = <Actions.ISearchSuccessPayload>payload;
                     this.isCurrentlySearching = false;
                     this.searchResult = successPayload.searchResult;
                     this.notifyChange();
